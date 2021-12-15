@@ -1,13 +1,21 @@
 import loadable from '@loadable/component';
-import { RouteConfig } from 'react-router-config';
-import Home from '@/pages/home';
+import { RouteObject } from 'react-router-dom'
 
-const routesConfig: RouteConfig[] = [
+export const routes: RoutesConfig[] = [
   {
     path: '/',
-    exact: true,
-    component: Home
+    element: loadable(() => import('@/pages/home'))
+  },
+  {
+    path: '/about',
+    element: loadable(() => import('@/pages/about'))
   }
 ];
 
-export default routesConfig;
+
+
+
+export interface RoutesConfig extends RouteObject {
+  auth?: string
+}
+

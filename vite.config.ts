@@ -41,5 +41,8 @@ export default defineConfig({
         javascriptEnabled: true
       }
     }
+  },
+  server: {
+    open: true,
   }
 });
